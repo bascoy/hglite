@@ -1,0 +1,124 @@
+@use "sass:color";
+@use "sass:map";
+
+@use "../abstract" as *;
+
+:root {
+  // Font family
+  --hg-font-family-primary: #{$hg-font-family-primary};
+
+  // Font sizes
+  --hg-font-size-s: #{map.get($text-s, size)};
+  --hg-font-size-m: #{map.get($text-m, size)};
+
+  // Line heights
+  --hg-line-height-s: #{map.get($text-s, line-height)};
+  --hg-line-height-m: #{map.get($text-m, line-height)};
+
+  // Text transform
+  --hg-text-uppercase: uppercase;
+  --hg-text-normal-case: none;
+
+  // Colors
+  --hg-color-rgb-white: #{$hg-color-rgb-white};
+  --hg-color-rgb-black: #{$hg-color-rgb-black};
+  --hg-color-rgb-neutral: #{$hg-color-rgb-neutral};
+  --hg-color-rgb-red: #{$hg-color-rgb-red};
+  --hg-color-rgb-orange: #{$hg-color-rgb-orange};
+  --hg-color-rgb-green: #{$hg-color-rgb-green};
+  --hg-color-rgb-blue: #{$hg-color-rgb-blue};
+  --hg-color-rgb-yellow: #{$hg-color-rgb-yellow};
+
+  @media (prefers-color-scheme: light) {
+    --hg-color-surface-0: #{color.mix($hg-color-white, $hg-color-neutral, 100%)};
+    --hg-color-surface-50: #{color.mix($hg-color-white, $hg-color-neutral, 90%)};
+    --hg-color-surface-200: #{color.mix($hg-color-white, $hg-color-neutral, 40%)};
+    --hg-color-surface-500: #{$hg-color-neutral};
+    --hg-color-surface-800: #{color.mix($hg-color-black, $hg-color-neutral, 60%)};
+    --hg-color-surface-950: #{color.mix($hg-color-black, $hg-color-neutral, 90%)};
+    --hg-color-surface-1000: #{color.mix($hg-color-black, $hg-color-neutral, 100%)};
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --hg-color-surface-0: #{color.mix($hg-color-black, $hg-color-neutral, 100%)};
+    --hg-color-surface-50: #{color.mix($hg-color-black, $hg-color-neutral, 90%)};
+    --hg-color-surface-200: #{color.mix($hg-color-black, $hg-color-neutral, 40%)};
+    --hg-color-surface-500: #{$hg-color-neutral};
+    --hg-color-surface-800: #{color.mix($hg-color-white, $hg-color-neutral, 60%)};
+    --hg-color-surface-950: #{color.mix($hg-color-white, $hg-color-neutral, 90%)};
+    --hg-color-surface-1000: #{color.mix($hg-color-white, $hg-color-neutral, 100%)};
+  }
+
+  // Spacers
+  --hg-spacer-0: #{$hg-spacer-0};
+  --hg-spacer-1: #{$hg-spacer-1};
+  --hg-spacer-2: #{$hg-spacer-2};
+  --hg-spacer-4: #{$hg-spacer-4};
+  --hg-spacer-8: #{$hg-spacer-8};
+  --hg-spacer-12: #{$hg-spacer-12};
+  --hg-spacer-16: #{$hg-spacer-16};
+  --hg-spacer-20: #{$hg-spacer-20};
+  --hg-spacer-24: #{$hg-spacer-24};
+  --hg-spacer-32: #{$hg-spacer-32};
+  --hg-spacer-40: #{$hg-spacer-40};
+  --hg-spacer-48: #{$hg-spacer-48};
+  --hg-spacer-56: #{$hg-spacer-56};
+  --hg-spacer-64: #{$hg-spacer-64};
+  --hg-spacer-72: #{$hg-spacer-72};
+  --hg-spacer-80: #{$hg-spacer-80};
+  --hg-spacer-88: #{$hg-spacer-88};
+  --hg-spacer-96: #{$hg-spacer-96};
+  --hg-spacer-104: #{$hg-spacer-104};
+  --hg-spacer-112: #{$hg-spacer-112};
+  --hg-spacer-120: #{$hg-spacer-120};
+  --hg-spacer-128: #{$hg-spacer-128};
+  --hg-spacer-136: #{$hg-spacer-136};
+  --hg-spacer-144: #{$hg-spacer-144};
+  --hg-spacer-152: #{$hg-spacer-152};
+  --hg-spacer-160: #{$hg-spacer-160};
+  --hg-spacer-100-percent-neg: #{$hg-spacer-100-percent-neg};
+  --hg-spacer-80-percent-neg: #{$hg-spacer-80-percent-neg};
+  --hg-spacer-75-percent-neg: #{$hg-spacer-75-percent-neg};
+  --hg-spacer-66-percent-neg: #{$hg-spacer-66-percent-neg};
+  --hg-spacer-60-percent-neg: #{$hg-spacer-60-percent-neg};
+  --hg-spacer-50-percent-neg: #{$hg-spacer-50-percent-neg};
+  --hg-spacer-40-percent-neg: #{$hg-spacer-40-percent-neg};
+  --hg-spacer-33-percent-neg: #{$hg-spacer-33-percent-neg};
+  --hg-spacer-25-percent-neg: #{$hg-spacer-25-percent-neg};
+  --hg-spacer-20-percent-neg: #{$hg-spacer-20-percent-neg};
+  --hg-spacer-auto: #{$hg-spacer-auto};
+  --hg-spacer-20-percent: #{$hg-spacer-20-percent};
+  --hg-spacer-25-percent: #{$hg-spacer-25-percent};
+  --hg-spacer-33-percent: #{$hg-spacer-33-percent};
+  --hg-spacer-40-percent: #{$hg-spacer-40-percent};
+  --hg-spacer-50-percent: #{$hg-spacer-50-percent};
+  --hg-spacer-60-percent: #{$hg-spacer-60-percent};
+  --hg-spacer-66-percent: #{$hg-spacer-66-percent};
+  --hg-spacer-75-percent: #{$hg-spacer-75-percent};
+  --hg-spacer-80-percent: #{$hg-spacer-80-percent};
+  --hg-spacer-100-percent: #{$hg-spacer-100-percent};
+  --hg-spacer-20-percent-neg: #{$hg-spacer-20-percent-neg};
+  --hg-spacer-25-percent-neg: #{$hg-spacer-25-percent-neg};
+  --hg-spacer-33-percent-neg: #{$hg-spacer-33-percent-neg};
+  --hg-spacer-40-percent-neg: #{$hg-spacer-40-percent-neg};
+  --hg-spacer-50-percent-neg: #{$hg-spacer-50-percent-neg};
+  --hg-spacer-60-percent-neg: #{$hg-spacer-60-percent-neg};
+  --hg-spacer-66-percent-neg: #{$hg-spacer-66-percent-neg};
+  --hg-spacer-75-percent-neg: #{$hg-spacer-75-percent-neg};
+  --hg-spacer-100-percent-neg: #{$hg-spacer-100-percent-neg};
+
+  // Body text
+  --hg-text-color-base: var(--hg-color-surface-950);
+  --hg-text-color-muted: var(--hg-color-surface-500);
+
+  --hg-font-family-base: #{$hg-font-family-primary};
+
+  --hg-text-size-base: var(--hg-font-size-m);
+  --hg-text-line-height-base: var(--hg-line-height-m);
+
+  // Transitions
+  --hg-transition-duration-fast: 0.2s;
+  --hg-transition-duration-medium: 0.3s;
+  --hg-transition-duration-slow: 0.5s;
+  --hg-transition-timing-function: ease-in-out;
+}

@@ -1,0 +1,19 @@
+// Core colors in RGB source channels
+$hg-color-rgb-white: (255, 255, 255) !default;
+$hg-color-rgb-black: (0, 0, 0) !default;
+$hg-color-rgb-neutral: (128, 128, 128) !default;
+$hg-color-rgb-red: (237, 15, 43) !default;
+$hg-color-rgb-orange: (229, 116, 11) !default;
+$hg-color-rgb-green: (18, 136, 44) !default;
+$hg-color-rgb-blue: (26, 50, 164) !default;
+$hg-color-rgb-yellow: (255, 206, 78) !default;
+
+// Core colors in RGB format
+$hg-color-white: rgb($hg-color-rgb-white...)!default;
+$hg-color-black: rgb($hg-color-rgb-black...)!default;
+$hg-color-neutral: rgb($hg-color-rgb-neutral...)!default;
+$hg-color-red: rgb($hg-color-rgb-red...)!default;
+$hg-color-orange: rgb($hg-color-rgb-orange...)!default;
+$hg-color-green: rgb($hg-color-rgb-green...)!default;
+$hg-color-blue: rgb($hg-color-rgb-blue...)!default;
+$hg-color-yellow: rgb($hg-color-rgb-yellow...)!default;

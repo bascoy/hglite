@@ -1,0 +1,279 @@
+@use 'sass:map';
+
+@use './breakpoints' as *;
+@use './spacers' as *;
+
+$hg-prefix: 'hg-' !default;
+
+$hg-breakpoint-utilities: (
+  xs: $hg-breakpoint-xs,
+  sm: $hg-breakpoint-sm,
+  md: $hg-breakpoint-md 
+) !default;
+
+$hg-spacer-utilitie-numbers: (
+  0: var(--hg-spacer-0),
+  1: var(--hg-spacer-1),
+  2: var(--hg-spacer-2),
+  4: var(--hg-spacer-4),
+  8: var(--hg-spacer-8),
+  12: var(--hg-spacer-12),
+  16: var(--hg-spacer-16),
+  20: var(--hg-spacer-20),
+  24: var(--hg-spacer-24),
+  32: var(--hg-spacer-32),
+  40: var(--hg-spacer-40),
+  48: var(--hg-spacer-48),
+  56: var(--hg-spacer-56),
+  64: var(--hg-spacer-64),
+  72: var(--hg-spacer-72),
+  80: var(--hg-spacer-80),
+  88: var(--hg-spacer-88),
+  96: var(--hg-spacer-96),
+  104: var(--hg-spacer-104),
+  112: var(--hg-spacer-112),
+  120: var(--hg-spacer-120),
+  128: var(--hg-spacer-128),
+  136: var(--hg-spacer-136),
+  144: var(--hg-spacer-144),
+  152: var(--hg-spacer-152),
+  160: var(--hg-spacer-160)
+) !default;
+
+$hg-spacer-utilitie-fractions: (
+  '20-percent': var(--hg-spacer-20-percent),
+  '25-percent': var(--hg-spacer-25-percent),
+  '33-percent': var(--hg-spacer-33-percent),
+  '40-percent': var(--hg-spacer-40-percent),
+  '50-percent': var(--hg-spacer-50-percent),
+  '60-percent': var(--hg-spacer-60-percent),
+  '66-percent': var(--hg-spacer-66-percent),
+  '75-percent': var(--hg-spacer-75-percent),
+  '100-percent': var(--hg-spacer-100-percent)
+) !default;
+
+$hg-spacer-utilitie-fractions-neg: (
+  '20-percent-neg': var(--hg-spacer-20-percent-neg),
+  '25-percent-neg': var(--hg-spacer-25-percent-neg),
+  '33-percent-neg': var(--hg-spacer-33-percent-neg),
+  '40-percent-neg': var(--hg-spacer-40-percent-neg),
+  '50-percent-neg': var(--hg-spacer-50-percent-neg),
+  '60-percent-neg': var(--hg-spacer-60-percent-neg),
+  '66-percent-neg': var(--hg-spacer-66-percent-neg),
+  '75-percent-neg': var(--hg-spacer-75-percent-neg),
+  '100-percent-neg': var(--hg-spacer-100-percent-neg)
+) !default;
+
+$hg-utilities: (
+  'font-size': (
+    property: (font-size, line-height),
+    class: 'text',
+    responsive: true,
+    values: (
+      s: (
+        font-size: var(--hg-font-size-s),
+        line-height: var(--hg-line-height-s)
+      ),
+      m: (
+        font-size: var(--hg-font-size-m),
+        line-height: var(--hg-line-height-m)
+      )
+    )
+  ),
+  'text-transform': (
+    property: text-transform,
+    class: 'text',
+    values: (uppercase: var(--hg-text-uppercase), normal-case: var(--hg-text-normal-case))
+  ),
+  'display': (
+    property: display,
+    class: 'd',
+    responsive: true,
+    values: contents inline inline-block block flex inline-flex none
+  ),
+  'flex-direction': (
+    property: flex-direction,
+    class: 'flex',
+    responsive: true,
+    values: (row: row, column: column) 
+  ),
+  'flex-wrap': (
+    property: flex-wrap,
+    class: 'flex',
+    responsive: true,
+    values: (nowrap: nowrap, wrap: wrap)
+  ),
+  'flex-grow': (
+    property: flex-grow,
+    class: 'grow',
+    responsive: true,
+    values: (0: 0, 1: 1, 2: 2, 3: 3, auto: auto)
+  ),
+  'flex-shrink': (
+    property: flex-shrink,
+    class: 'shrink',
+    responsive: true,
+    values: (0: 0, 1: 1, 2: 2, 3: 3, auto: auto)
+  ),
+  'order': (
+    property: order,
+    class: 'order',
+    responsive: true,
+    values: (3-neg: -3, 2-neg: -2, 1-neg: -1,0: 0, 1: 1, 2: 2, 3: 3, first: -9999, last: 9999)
+  ),
+  'justify-content': (
+    property: justify-content,
+    class: 'justify',
+    responsive: true,
+    values: (start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly)
+  ),
+  'justify-items': (
+    property: justify-items,
+    class: 'justify',
+    responsive: true,
+    values: (start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly)
+  ),
+  'align-content': (
+    property: align-content,
+    class: 'content',
+    responsive: true,
+    values: (start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly)
+  ),
+  'align-items': (
+    property: align-items,
+    class: 'items',
+    responsive: true,
+    values: (start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly)
+  ),
+  'row-gap': (
+    property: row-gap,
+    class: 'gap-y',
+    responsive: true,
+    values: $hg-spacer-utilitie-numbers
+  ),
+  'column-gap': (
+    property: column-gap,
+    class: 'gap-x',
+    responsive: true,
+    values: $hg-spacer-utilitie-numbers
+  ),
+  'overflow': (
+    property: overflow,
+    class: 'overflow',
+    values: (hidden: hidden, auto: auto, x-hidden: hidden, y-hidden: hidden, x-auto: auto, y-auto: auto)
+  ),
+  'position': (
+    property: position,
+    class: 'position',
+    responsive: true,
+    values: (static: static, relative: relative, absolute: absolute, fixed: fixed, sticky: sticky)
+  ),
+  'top': (
+    property: top,
+    class: 'top',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, map.merge($hg-spacer-utilitie-fractions, map.merge($hg-spacer-utilitie-fractions-neg, (auto: auto))))
+  ),
+  'bottom': (
+    property: bottom,
+    class: 'bottom',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, map.merge($hg-spacer-utilitie-fractions, map.merge($hg-spacer-utilitie-fractions-neg, (auto: auto))))
+  ),
+  'inset-inline-start': (
+    property: inset-inline-start,
+    class: 'start',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, map.merge($hg-spacer-utilitie-fractions, map.merge($hg-spacer-utilitie-fractions-neg, (auto: auto))))
+  ),
+  'inset-inline-end': (
+    property: inset-inline-end,
+    class: 'end',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, map.merge($hg-spacer-utilitie-fractions, map.merge($hg-spacer-utilitie-fractions-neg, (auto: auto))))
+  ),
+  'min-width': (
+    property: min-width,
+    class: 'min-w',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, map.merge($hg-spacer-utilitie-fractions, (auto: auto, 100dvw: 100dvw)))
+  ),
+  'min-height': (
+    property: min-height,
+    class: 'min-h',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, map.merge($hg-spacer-utilitie-fractions, (auto: auto, 100dvh: 100dvh)))
+  ),
+  'max-width': (
+    property: max-width,
+    class: 'max-w',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, map.merge($hg-spacer-utilitie-fractions, (unset: unset, 100dvw: 100dvw)))
+  ),
+  'max-height': (
+    property: max-height,
+    class: 'max-h',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, map.merge($hg-spacer-utilitie-fractions, (unset: unset, 100dvh: 100dvh)))
+  ),
+  'height': (
+    property: height,
+    class: 'h',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, map.merge($hg-spacer-utilitie-fractions, (auto: auto, 100dvh: 100dvh)))
+  ),
+  'width': (
+    property: width,
+    class: 'w',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, map.merge($hg-spacer-utilitie-fractions, (auto: auto, 100dvw: 100dvw)))
+  ),
+  'padding-top': (
+    property: padding-top,
+    class: 'pt',
+    responsive: true,
+    values: $hg-spacer-utilitie-numbers
+  ),
+  'padding-bottom': (
+    property: padding-bottom,
+    class: 'pb',
+    responsive: true,
+    values: $hg-spacer-utilitie-numbers
+  ),
+  'padding-inline-start': (
+    property: padding-inline-start,
+    class: 'ps',
+    responsive: true,
+    values: $hg-spacer-utilitie-numbers
+  ),
+  'padding-inline-end': (
+    property: padding-inline-end,
+    class: 'pe',
+    responsive: true,
+    values: $hg-spacer-utilitie-numbers
+  ),
+  'margin-top': (
+    property: margin-top,
+    class: 'mt',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, $hg-spacer-utilitie-fractions)
+  ),
+  'margin-bottom': (
+    property: margin-bottom,
+    class: 'mb',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, $hg-spacer-utilitie-fractions)
+  ),
+  'margin-inline-start': (
+    property: margin-inline-start,
+    class: 'ms',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, $hg-spacer-utilitie-fractions)
+  ),
+  'margin-inline-end': (
+    property: margin-inline-end,
+    class: 'me',
+    responsive: true,
+    values: map.merge($hg-spacer-utilitie-numbers, $hg-spacer-utilitie-fractions)
+  )
+) !default;

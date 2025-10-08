@@ -1,5 +1,6 @@
 {
-  "name": "hglite-ui",
+  "name": "hglite-ui-lib",
+  "description": "Librería de estilos CSS reutilizables con ejemplo",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,5 +11,10 @@
   },
   "dependencies": {
     "astro": "^5.14.1"
+  },
+  "author": "Pablo Bascoy",
+  "license": "MIT",
+  "devDependencies": {
+    "sass-embedded": "^1.93.2"
   }
 }
