@@ -1,20 +1,46 @@
 {
   "name": "hglite-ui-lib",
-  "description": "Librería de estilos CSS reutilizables con ejemplo",
+  "version": "1.0.0",
+  "description": "Librería de estilos CSS reutilizables basada en SASS para proyectos web.",
   "type": "module",
-  "version": "0.0.1",
+  "main": "dist/hglite.css",
+  "style": "dist/hglite.css",
+  "sass": "src/styles/hglite/hglite.scss",
+  "exports": {
+    ".": {
+      "import": "./src/styles/hglite/hglite.scss",
+      "style": "./src/styles/hglite/hglite.scss"
+    }
+  },
+  "files": [
+    "dist/hglite.css",
+    "src/styles/hglite/hglite.scss"
+  ],
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sass": "sass src/styles/hglite/hglite.scss dist/hglite.css --style=expanded && sass src/styles/hglite/hglite.scss dist/hglite.min.css --style=compressed"
   },
   "dependencies": {
     "astro": "^5.14.1"
   },
+  "keywords": [
+    "hglite",
+    "ui",
+    "ux",
+    "css",
+    "sass",
+    "scss",
+    "library",
+    "design-system",
+    "holygrail"
+  ],
   "author": "Pablo Bascoy",
   "license": "MIT",
   "devDependencies": {
-    "sass-embedded": "^1.93.2"
+    "sass-embedded": "^1.93.2",
+    "sass": "1.93.2"
   }
 }
