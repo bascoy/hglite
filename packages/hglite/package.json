@@ -1,13 +1,13 @@
 {
   "name": "hglite-ui-lib",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Librería de estilos CSS reutilizables basada en SASS para proyectos web.",
   "type": "module",
   "main": "./dist/hglite.css",
   "style": "./dist/hglite.css",
   "files": [
     "./dist/hglite.css",
-    "./src/styles/hglite/hglite.scss"
+    "./src/styles/hglite/"
   ],
   "scripts": {
     "dev": "astro dev",
